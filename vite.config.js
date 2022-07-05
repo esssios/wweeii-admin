@@ -8,12 +8,16 @@ import {
   wrapperEnv,
   createProxy
 } from './build/utils'
+import {
+  createVitePlugins
+} from './build/plugin'
+
 
 export default defineConfig(({
   command,
   mode
 }) => {
-  console.log("-----mode-----",mode);
+  const isBuild = command === 'build'
   const env = loadEnv(mode, process.cwd())
   const viteEnv = wrapperEnv(env)
 
@@ -39,7 +43,7 @@ export default defineConfig(({
         '@': path.resolve(__dirname, 'src'),
       },
     },
-    plugins: [vue()],
+    plugins: createVitePlugins(viteEnv, isBuild),
     base: VITE_PUBLIC_PATH || '/',
     server: {
       host: '0.0.0.0', // 默认为'127.0.0.1'，如果将此设置为 `0.0.0.0` 或者 `true` 将监听所有地址，包括局域网和公网地址
