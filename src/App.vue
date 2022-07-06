@@ -1,23 +1,26 @@
-<script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from "./components/HelloWorld.vue";
-</script>
-
 <template>
-  <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
-  <!-- <HelloWorld msg="Hello Vue 3 + Vite" /> -->
-  <HelloWorld />
+  <AppProvider>
+    <n-space m-50>
+      <n-button>Default</n-button>
+      <n-button type="tertiary"> Tertiary </n-button>
+      <n-button type="primary"> Primary </n-button>
+      <n-button type="info"> Info </n-button>
+      <n-button type="success"> Success </n-button>
+      <n-button type="warning"> Warning </n-button>
+      <n-button type="error"> Error </n-button>
+    </n-space>
+  </AppProvider>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-  background-color: $primaryColor;
-}
-</style>
+<script setup>
+import { onMounted } from 'vue'
+import AppProvider from '@/components/AppProvider/index.vue'
+
+onMounted(() => {
+  $loadingBar.start()
+  setTimeout(() => {
+    $loadingBar.finish()
+    $message.success('加载完成，Perfect~')
+  }, 500)
+})
+</script>
