@@ -19,6 +19,8 @@ import { unocss } from "./unocss";
 import Components from "unplugin-vue-components/vite";
 import { NaiveUiResolver } from "unplugin-vue-components/resolvers";
 
+import { configMockPlugin } from "./mock";
+
 export function createVitePlugins(viteEnv, isBuild) {
   const plugins = [
     vue(),
@@ -36,6 +38,10 @@ export function createVitePlugins(viteEnv, isBuild) {
         brotliSize: true,
       })
     );
+  }
+
+  if (viteEnv?.VITE_APP_USE_MOCK) {
+    plugins.push(configMockPlugin(isBuild));
   }
 
   return plugins;
