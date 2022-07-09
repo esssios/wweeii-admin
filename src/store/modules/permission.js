@@ -20,7 +20,7 @@ function filterAsyncRoutes(routes = [], role) {
       if (route.children && route.children.length) {
         curRoute.children = filterAsyncRoutes(route.children, role);
       } else {
-        Reflect.deleteProperty(curRoute, "children");
+        Reflect.deleteProperty(curRoute, "children"); // 若没有子路由，删除cuRoute.children
       }
       ret.push(curRoute);
     }

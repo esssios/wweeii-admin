@@ -1,9 +1,25 @@
+import Layout from "@/layout/index.vue";
+// import Home from '@/views/dashboard/index.vue'
+
 export const basicRoutes = [
   {
     name: "404",
     path: "/404",
     component: () => import("@/views/error-page/404.vue"),
     isHidden: true,
+  },
+  {
+    name: "REDIRECT",
+    path: "/redirect",
+    component: Layout,
+    isHidden: true,
+    children: [
+      {
+        name: "REDIRECT_NAME",
+        path: "",
+        component: () => import("@/views/redirect/index.vue"),
+      },
+    ],
   },
   {
     name: "LOGIN",
@@ -18,20 +34,136 @@ export const basicRoutes = [
   {
     name: "Dashboard",
     path: "/",
-    component: () => import("@/views/dashboard/index.vue"),
+    component: Layout,
+    redirect: "/workbench",
     meta: {
-      title: "Dashboard",
+      title: "仪表盘",
+      icon: "mdi:chart-bar",
     },
+    children: [
+      {
+        name: "dashboard_workbench",
+        path: "workbench",
+        component: () => import("@/views/dashboard/workbench/index.vue"),
+        meta: {
+          title: "工作台",
+          icon: "mdi:home",
+        },
+      },
+      {
+        name: "dashboard_analysis",
+        path: "analysis",
+        component: () => import("@/views/dashboard/analysis/index.vue"),
+        meta: {
+          title: "分析页",
+          icon: "mdi:home",
+        },
+      },
+    ],
   },
 
   {
-    name: "TestUnocss",
-    path: "/test/unocss",
-    component: () => import("@/views/test-page/unocss/index.vue"),
+    name: "ErrorPage",
+    path: "/error-page",
+    component: Layout,
+    redirect: "/error-page/404",
     meta: {
-      title: "测试unocss",
+      title: "错误页",
+      icon: "mdi:alert-circle-outline",
+      index: 4,
     },
+    children: [
+      {
+        name: "ERROR-404",
+        path: "404",
+        component: () => import("@/views/error-page/404.vue"),
+        meta: {
+          title: "404",
+          icon: "mdi:alert-circle-outline",
+        },
+      },
+    ],
   },
+
+  // {
+  //   name: 'Test',
+  //   path: '/test',
+  //   component: Layout,
+  //   redirect: '/test/unocss',
+  //   meta: {
+  //     title: '基础功能测试',
+  //     icon: 'mdi:menu',
+  //   },
+  //   children: [{
+  //       name: 'Unocss',
+  //       path: 'unocss',
+  //       component: () => import('@/views/test-page/unocss/index.vue'),
+  //       meta: {
+  //         title: '测试unocss',
+  //       },
+  //     },
+  //     {
+  //       name: 'Message',
+  //       path: 'message',
+  //       component: () => import('@/views/test-page/message/index.vue'),
+  //       meta: {
+  //         title: '测试Message',
+  //       },
+  //     },
+  //     {
+  //       name: 'Dialog',
+  //       path: 'dialog',
+  //       component: () => import('@/views/test-page/dialog/index.vue'),
+  //       meta: {
+  //         title: '测试Dialog',
+  //       },
+  //     },
+  //     {
+  //       name: 'TestKeepAlive',
+  //       path: 'keep-alive',
+  //       component: () => import('@/views/test-page/keep-alive/index.vue'),
+  //       meta: {
+  //         title: '测试Keep-Alive',
+  //         keepAlive: true,
+  //       },
+  //     },
+  //   ],
+  // },
+
+  // {
+  //   name: 'ExternalLink',
+  //   path: '/external-link',
+  //   component: Layout,
+  //   meta: {
+  //     title: '外部链接',
+  //     icon: 'mdi:link-variant',
+  //   },
+  //   children: [{
+  //       name: 'LinkGithubSrc',
+  //       path: 'https://github.com/zclzone/vue-naive-admin',
+  //       meta: {
+  //         title: '源码 - github',
+  //         icon: 'mdi:github',
+  //       },
+  //     },
+  //     {
+  //       name: 'LinkGiteeSrc',
+  //       path: 'https://gitee.com/zclzone/vue-naive-admin',
+  //       meta: {
+  //         title: '源码 - gitee',
+  //         icon: 'simple-icons:gitee',
+  //       },
+  //     },
+  //     {
+  //       name: 'LinkDocs',
+  //       path: 'https://zclzone.github.io/vue-naive-admin-docs',
+  //       meta: {
+  //         title: '文档 - vuepress',
+  //         icon: 'mdi:vuejs',
+  //       },
+  //     },
+  //   ],
+  // },
 ];
 
 export const NOT_FOUND_ROUTE = {
@@ -41,7 +173,6 @@ export const NOT_FOUND_ROUTE = {
   isHidden: true,
 };
 
-// modules文件夹下的路由都会作为动态路由
 const modules = import.meta.globEager("./modules/*.js");
 const asyncRoutes = [];
 Object.keys(modules).forEach((key) => {

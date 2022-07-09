@@ -1,6 +1,8 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@iconify/json': ^2.1.63
+  '@iconify/vue': ^3.2.1
   '@unocss/preset-attributify': ^0.43.1
   '@unocss/preset-icons': ^0.43.1
   '@unocss/preset-uno': ^0.43.1
@@ -32,6 +34,8 @@ dependencies:
   vue-router: 4.0.16_vue@3.2.37
 
 devDependencies:
+  '@iconify/json': 2.1.75
+  '@iconify/vue': 3.2.1_vue@3.2.37
   '@unocss/preset-attributify': 0.43.1
   '@unocss/preset-icons': 0.43.1
   '@unocss/preset-uno': 0.43.1
@@ -122,6 +126,13 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
+  /@iconify/json/2.1.75:
+    resolution: {integrity: sha512-JkrchHjjS/f5dRqNUi0M+cWQrPTJonNf51LsFA5GUo3Q9xhRoxaOMf8Hcn2VcG6e2mzvjpHc7fBiqh+aRtdrPQ==}
+    dependencies:
+      '@iconify/types': 1.1.0
+      pathe: 0.3.2
+    dev: true
+
   /@iconify/types/1.1.0:
     resolution: {integrity: sha512-Jh0llaK2LRXQoYsorIH8maClebsnzTcve+7U3rQUSnC11X4jtPnFuyatqFLvMxZ8MLG8dB4zfHsbPfuvxluONw==}
     dev: true
@@ -137,6 +148,14 @@ packages:
       local-pkg: 0.4.1
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /@iconify/vue/3.2.1_vue@3.2.37:
+    resolution: {integrity: sha512-c4R6ZgFo1JrJ8aPMMgOPgfU7lBswihMGR+yWe/P4ZukC3kTkeT4+lkt9Pc/itVFMkwva/S/7u9YofmYv57fnNQ==}
+    peerDependencies:
+      vue: 3.x
+    dependencies:
+      vue: 3.2.37
     dev: true
 
   /@jridgewell/gen-mapping/0.3.2:
