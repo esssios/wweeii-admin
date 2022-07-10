@@ -18,7 +18,7 @@
 <script setup>
 import Header from "./components/header/index.vue";
 import SideBar from "./components/sidebar/index.vue";
-import Content from "./components/Content/index.vue";
+import Content from "./components/content/index.vue";
 import Tags from "./components/tags/index.vue";
 </script>
 

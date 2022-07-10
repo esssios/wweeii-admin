@@ -1,3 +1,3 @@
 <template>
-  <h1>page1</h1>
+  <h1>react文档</h1>
 </template>

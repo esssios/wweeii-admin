@@ -1,3 +1,7 @@
+<script setup>
+import SideMenu from "./components/SideMenu.vue";
+</script>
+
 <template>
-  <h1>菜单</h1>
+  <SideMenu />
 </template>

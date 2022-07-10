@@ -1,3 +1,3 @@
 <template>
-  <h1>page2</h1>
+  <h1>vue文档</h1>
 </template>

@@ -38,7 +38,7 @@ export const basicRoutes = [
     redirect: "/workbench",
     meta: {
       title: "仪表盘",
-      icon: "mdi:chart-bar",
+      // icon: "mdi:chart-bar",
     },
     children: [
       {
@@ -47,7 +47,7 @@ export const basicRoutes = [
         component: () => import("@/views/dashboard/workbench/index.vue"),
         meta: {
           title: "工作台",
-          icon: "mdi:home",
+          // icon: "mdi:home",
         },
       },
       {
@@ -56,7 +56,38 @@ export const basicRoutes = [
         component: () => import("@/views/dashboard/analysis/index.vue"),
         meta: {
           title: "分析页",
-          icon: "mdi:home",
+          // icon: "mdi:home",
+        },
+      },
+    ],
+  },
+
+  {
+    name: "Document",
+    path: "/document",
+    component: Layout,
+    redirect: "/document/vue_document",
+    meta: {
+      title: "文档",
+      // icon: "mdi:chart-bar",
+    },
+    children: [
+      {
+        name: "vue_document",
+        path: "vue_document",
+        component: () => import("@/views/document/vue_document/index.vue"),
+        meta: {
+          title: "vue文档",
+          // icon: "mdi:home",
+        },
+      },
+      {
+        name: "react_document",
+        path: "react_document",
+        component: () => import("@/views/document/react_document/index.vue"),
+        meta: {
+          title: "react文档",
+          // icon: "mdi:home",
         },
       },
     ],
@@ -64,71 +95,55 @@ export const basicRoutes = [
 
   {
     name: "ErrorPage",
-    path: "/error-page",
+    path: "/error_page",
     component: Layout,
-    redirect: "/error-page/404",
+    redirect: "/error_page/404",
     meta: {
       title: "错误页",
-      icon: "mdi:alert-circle-outline",
+      // icon: "mdi:alert-circle-outline",
       index: 4,
     },
     children: [
       {
-        name: "ERROR-404",
+        name: "ERROR_404",
         path: "404",
         component: () => import("@/views/error-page/404.vue"),
         meta: {
           title: "404",
-          icon: "mdi:alert-circle-outline",
+          // icon: "mdi:alert-circle-outline",
         },
       },
     ],
   },
 
-  // {
-  //   name: 'Test',
-  //   path: '/test',
-  //   component: Layout,
-  //   redirect: '/test/unocss',
-  //   meta: {
-  //     title: '基础功能测试',
-  //     icon: 'mdi:menu',
-  //   },
-  //   children: [{
-  //       name: 'Unocss',
-  //       path: 'unocss',
-  //       component: () => import('@/views/test-page/unocss/index.vue'),
-  //       meta: {
-  //         title: '测试unocss',
-  //       },
-  //     },
-  //     {
-  //       name: 'Message',
-  //       path: 'message',
-  //       component: () => import('@/views/test-page/message/index.vue'),
-  //       meta: {
-  //         title: '测试Message',
-  //       },
-  //     },
-  //     {
-  //       name: 'Dialog',
-  //       path: 'dialog',
-  //       component: () => import('@/views/test-page/dialog/index.vue'),
-  //       meta: {
-  //         title: '测试Dialog',
-  //       },
-  //     },
-  //     {
-  //       name: 'TestKeepAlive',
-  //       path: 'keep-alive',
-  //       component: () => import('@/views/test-page/keep-alive/index.vue'),
-  //       meta: {
-  //         title: '测试Keep-Alive',
-  //         keepAlive: true,
-  //       },
-  //     },
-  //   ],
-  // },
+  {
+    name: "Test",
+    path: "/test",
+    component: Layout,
+    redirect: "/test/unocss",
+    meta: {
+      title: "测试",
+      // icon: 'mdi:menu',
+    },
+    children: [
+      {
+        name: "Unocss",
+        path: "unocss",
+        component: () => import("@/views/test_page/unocss/index.vue"),
+        meta: {
+          title: "测试Unocss",
+        },
+      },
+      {
+        name: "Message",
+        path: "message",
+        component: () => import("@/views/test_page/message/index.vue"),
+        meta: {
+          title: "测试Message",
+        },
+      },
+    ],
+  },
 
   // {
   //   name: 'ExternalLink',
