@@ -5,7 +5,7 @@ export const basicRoutes = [
   {
     name: "404",
     path: "/404",
-    component: () => import("@/views/error-page/404.vue"),
+    component: () => import("@/views/error_page/404.vue"),
     isHidden: true,
   },
   {
@@ -107,7 +107,7 @@ export const basicRoutes = [
       {
         name: "ERROR_404",
         path: "404",
-        component: () => import("@/views/error-page/404.vue"),
+        component: () => import("@/views/error_page/404.vue"),
         meta: {
           title: "404",
           // icon: "mdi:alert-circle-outline",

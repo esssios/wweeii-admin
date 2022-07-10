@@ -10,14 +10,13 @@
     "lint:fix": "eslint --fix --ext .js,.vue ."
   },
   "dependencies": {
+    "@icon-park/vue-next": "^1.4.2",
     "axios": "^0.27.2",
     "pinia": "^2.0.14",
     "vue": "^3.2.25",
     "vue-router": "4.0.16"
   },
   "devDependencies": {
-    "@iconify/json": "^2.1.63",
-    "@iconify/vue": "^3.2.1",
     "@unocss/preset-attributify": "^0.43.1",
     "@unocss/preset-icons": "^0.43.1",
     "@unocss/preset-uno": "^0.43.1",
