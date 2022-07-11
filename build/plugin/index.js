@@ -20,12 +20,14 @@ import Components from "unplugin-vue-components/vite";
 import { NaiveUiResolver } from "unplugin-vue-components/resolvers";
 
 import { configMockPlugin } from "./mock";
+import unplugin from "./unplugin";
 
 export function createVitePlugins(viteEnv, isBuild) {
   const plugins = [
     vue(),
     VueSetupExtend(),
     configHtmlPlugin(viteEnv, isBuild),
+    ...unplugin,
     unocss(),
     Components({ resolvers: [NaiveUiResolver()] }),
   ];

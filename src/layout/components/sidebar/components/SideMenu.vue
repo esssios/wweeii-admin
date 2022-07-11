@@ -16,9 +16,7 @@ import { usePermissionStore } from "@/store/modules/permission";
 
 import { isExternal } from "@/utils/is";
 import { useAppStore } from "@/store/modules/app";
-// import { renderIcon } from '@/utils/icon'
-import { useRouter } from "vue-router";
-import { computed } from "vue";
+import { renderIcon } from "@/utils/icon";
 
 const router = useRouter();
 const permissionStore = usePermissionStore();
@@ -46,7 +44,7 @@ function getMenuItem(route, basePath = "") {
     label: (route.meta && route.meta.title) || route.name,
     key: route.name,
     path: resolvePath(basePath, route.path),
-    // icon: route.meta?.icon ? renderIcon(route.meta?.icon, { size: 16 }) : renderIcon('mdi:circle-outline', { size: 8 }),
+    icon: route.meta?.icon ? renderIcon(route.meta?.icon, { size: 16 }) : renderIcon("mdi:circle-outline", { size: 8 }),
     index: route.meta?.index || 0,
   };
 
@@ -61,9 +59,9 @@ function getMenuItem(route, basePath = "") {
       label: singleRoute.meta?.title || singleRoute.name,
       key: singleRoute.name,
       path: resolvePath(menuItem.path, singleRoute.path),
-      // icon: singleRoute.meta?.icon
-      //   ? renderIcon(singleRoute.meta?.icon, { size: 16 })
-      //   : renderIcon('mdi:circle-outline', { size: 8 }),
+      icon: singleRoute.meta?.icon
+        ? renderIcon(singleRoute.meta?.icon, { size: 16 })
+        : renderIcon("mdi:circle-outline", { size: 8 }),
       index: menuItem.index,
     };
     const visibleItems = singleRoute.children ? singleRoute.children.filter((item) => item.name && !item.isHidden) : [];

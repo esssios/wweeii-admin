@@ -38,7 +38,7 @@ export const basicRoutes = [
     redirect: "/workbench",
     meta: {
       title: "仪表盘",
-      // icon: "mdi:chart-bar",
+      icon: "mdi:chart-bar",
     },
     children: [
       {
@@ -47,7 +47,7 @@ export const basicRoutes = [
         component: () => import("@/views/dashboard/workbench/index.vue"),
         meta: {
           title: "工作台",
-          // icon: "mdi:home",
+          icon: "mdi:home",
         },
       },
       {

@@ -1,3 +1,5 @@
+import path from "path";
+
 const httpsReg = /^https:\/\//;
 
 export function wrapperEnv(envOptions) {
@@ -50,4 +52,8 @@ export function createProxy(list = []) {
     };
   }
   return rst;
+}
+
+export function getRootPath(...dir) {
+  return path.resolve(process.cwd(), ...dir);
 }

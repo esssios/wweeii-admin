@@ -10,13 +10,14 @@
     "lint:fix": "eslint --fix --ext .js,.vue ."
   },
   "dependencies": {
-    "@icon-park/vue-next": "^1.4.2",
     "axios": "^0.27.2",
     "pinia": "^2.0.14",
     "vue": "^3.2.25",
     "vue-router": "4.0.16"
   },
   "devDependencies": {
+    "@iconify/json": "^2.1.75",
+    "@iconify/vue": "^3.2.1",
     "@unocss/preset-attributify": "^0.43.1",
     "@unocss/preset-icons": "^0.43.1",
     "@unocss/preset-uno": "^0.43.1",
@@ -31,6 +32,8 @@
     "rollup-plugin-visualizer": "^5.6.0",
     "sass": "^1.53.0",
     "unocss": "^0.43.1",
+    "unplugin-auto-import": "^0.9.2",
+    "unplugin-icons": "^0.14.7",
     "unplugin-vue-components": "^0.21.1",
     "vite": "^2.9.9",
     "vite-plugin-html": "2",
