@@ -38,7 +38,7 @@ export const basicRoutes = [
     redirect: "/workbench",
     meta: {
       title: "仪表盘",
-      icon: "mdi:chart-bar",
+      icon: "icon-park-outline:dashboard",
     },
     children: [
       {
@@ -47,7 +47,7 @@ export const basicRoutes = [
         component: () => import("@/views/dashboard/workbench/index.vue"),
         meta: {
           title: "工作台",
-          icon: "mdi:home",
+          icon: "icon-park-outline:workbench",
         },
       },
       {
@@ -56,7 +56,7 @@ export const basicRoutes = [
         component: () => import("@/views/dashboard/analysis/index.vue"),
         meta: {
           title: "分析页",
-          // icon: "mdi:home",
+          icon: "icon-park-outline:analysis",
         },
       },
     ],
@@ -69,7 +69,7 @@ export const basicRoutes = [
     redirect: "/document/vue_document",
     meta: {
       title: "文档",
-      // icon: "mdi:chart-bar",
+      icon: "carbon:document",
     },
     children: [
       {
@@ -78,7 +78,7 @@ export const basicRoutes = [
         component: () => import("@/views/document/vue_document/index.vue"),
         meta: {
           title: "vue文档",
-          // icon: "mdi:home",
+          icon: "ion:logo-vue",
         },
       },
       {
@@ -87,7 +87,7 @@ export const basicRoutes = [
         component: () => import("@/views/document/react_document/index.vue"),
         meta: {
           title: "react文档",
-          // icon: "mdi:home",
+          icon: "ion:logo-react",
         },
       },
     ],
@@ -99,8 +99,8 @@ export const basicRoutes = [
     component: Layout,
     redirect: "/error_page/404",
     meta: {
-      title: "错误页",
-      // icon: "mdi:alert-circle-outline",
+      title: "异常",
+      icon: "carbon:error",
       index: 4,
     },
     children: [
@@ -110,7 +110,7 @@ export const basicRoutes = [
         component: () => import("@/views/error_page/404.vue"),
         meta: {
           title: "404",
-          // icon: "mdi:alert-circle-outline",
+          icon: "tabler:error-404",
         },
       },
     ],
@@ -123,7 +123,7 @@ export const basicRoutes = [
     redirect: "/test/unocss",
     meta: {
       title: "测试",
-      // icon: 'mdi:menu',
+      icon: "file-icons:test-js",
     },
     children: [
       {

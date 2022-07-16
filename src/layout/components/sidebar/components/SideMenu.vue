@@ -19,10 +19,9 @@ import { useAppStore } from "@/store/modules/app";
 import { renderIcon } from "@/utils/icon";
 
 const router = useRouter();
+const { currentRoute } = router;
 const permissionStore = usePermissionStore();
 const appStore = useAppStore();
-console.log("------router-----", router);
-const { currentRoute } = router;
 
 const menuOptions = computed(() => {
   return permissionStore.menus.map((item) => getMenuItem(item)).sort((a, b) => a.index - b.index);
