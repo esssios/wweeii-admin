@@ -24,6 +24,7 @@
         </div>
       </div>
     </n-card>
+    <icon-custom-logo text-36></icon-custom-logo>
   </div>
 </template>
 

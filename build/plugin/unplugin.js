@@ -13,7 +13,7 @@ import Icons from "unplugin-icons/vite";
 
 import { getRootPath } from "../utils";
 
-const customIconPath = getRootPath("src", "assets/icons");
+const customIconPath = getRootPath("src", "assets/svg");
 export default [
   AutoImport({
     imports: ["vue", "vue-router"],
