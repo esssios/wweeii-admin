@@ -1,3 +1,3 @@
 <template>
-  <h1>已打开的标签</h1>
+  <h1>tags</h1>
 </template>

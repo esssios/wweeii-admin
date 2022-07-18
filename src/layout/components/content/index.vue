@@ -1,11 +1,13 @@
 <template>
-  <router-view v-slot="{ Component, route }">
-    <transition name="fade-slide" mode="out-in" appear>
-      <keep-alive :include="keepAliveRouteNames">
-        <component :is="Component" v-if="appStore.reloadFlag" :key="route.path" />
-      </keep-alive>
-    </transition>
-  </router-view>
+  <div p-16>
+    <router-view v-slot="{ Component, route }">
+      <transition name="fade-slide" mode="out-in" appear>
+        <keep-alive :include="keepAliveRouteNames">
+          <component :is="Component" v-if="appStore.reloadFlag" :key="route.path" />
+        </keep-alive>
+      </transition>
+    </router-view>
+  </div>
 </template>
 
 <script setup>

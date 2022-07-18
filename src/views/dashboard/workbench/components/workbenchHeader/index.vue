@@ -1,35 +1,39 @@
 <template>
-  <div p-15>
-    <n-card rounded-10>
-      <div flex items-center>
-        <img rounded-full width="60" :src="userStore.avatar" />
-        <div ml-20>
-          <p text-16>Hello, {{ userStore.name }}</p>
-          <p mt-5 text-24 op-60>今天又是元气满满的一天</p>
-        </div>
-        <div ml-auto flex items-center>
-          <n-statistic label="待办" :value="4">
-            <template #suffix> / 10 </template>
-          </n-statistic>
-          <n-statistic label="Stars" w-100 ml-80>
-            <a href="https://github.com/zclzone/vue-naive-admin">
-              <img allt="stars" src="https://badgen.net/github/stars/zclzone/vue-naive-admin" />
-            </a>
-          </n-statistic>
-          <n-statistic label="Forks" w-100 ml-80>
-            <a href="https://github.com/zclzone/vue-naive-admin">
-              <img allt="forks" src="https://badgen.net/github/forks/zclzone/vue-naive-admin" />
-            </a>
-          </n-statistic>
+  <n-card :bordered="false" class="rounded-16px shadow-sm">
+    <div class="flex-y-center justify-between">
+      <div class="flex-y-center">
+        <icon-custom-avatar class="text-70px" />
+        <div class="pl-12px">
+          <h3 class="text-18px font-semibold">早安，{{ userStore.name }}, 今天又是充满活力的一天！</h3>
+          <p class="leading-30px text-[#999]">今日多云转晴，20℃ - 25℃！</p>
         </div>
       </div>
-    </n-card>
-    <icon-custom-logo text-36></icon-custom-logo>
-  </div>
+      <n-space :size="24" :wrap="false">
+        <n-statistic v-for="item in statisticData" :key="item.id" class="whitespace-nowrap" v-bind="item"></n-statistic>
+      </n-space>
+    </div>
+  </n-card>
 </template>
 
 <script setup>
 import { useUserStore } from "@/store/modules/user";
+const statisticData = ref([
+  {
+    id: 0,
+    label: "项目数",
+    value: "25",
+  },
+  {
+    id: 1,
+    label: "待办",
+    value: "4/16",
+  },
+  {
+    id: 2,
+    label: "消息",
+    value: "12",
+  },
+]);
 
 const userStore = useUserStore();
 </script>
