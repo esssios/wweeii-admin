@@ -3,7 +3,6 @@ import path from "path";
 const httpsReg = /^https:\/\//;
 
 export function wrapperEnv(envOptions) {
-  console.log("envOptions", envOptions);
   if (!envOptions) return {};
   const rst = {};
 

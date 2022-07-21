@@ -36,6 +36,18 @@
             </n-grid-item>
           </n-grid>
         </n-card>
+        <n-card title="时间线" :bordered="false" size="small" class="shadow-sm rounded-16px">
+          <n-timeline size="large">
+            <n-timeline-item
+              v-for="item in timeLine"
+              :key="item.id"
+              :type="item.type"
+              :title="item.title"
+              :content="item.content"
+              :time="item.time"
+            />
+          </n-timeline>
+        </n-card>
         <!-- <n-card title="创意" :bordered="false" size="small" class="shadow-sm rounded-16px">
           <icon-custom-banner class="text-400px text-primary" />
         </n-card> -->
@@ -114,5 +126,11 @@ const activity = ref([
   { id: 2, content: "Soybean 准备为soybean-admin 1.0的发布做充分的准备工作！", time: "2021-10-31 22:43:12" },
   { id: 1, content: "@yanbowe 向soybean-admin提交了一个bug，多标签栏不会自适应。", time: "2021-10-27 10:24:54" },
   { id: 0, content: "Soybean 在2021年5月28日创建了开源项目soybean-admin！", time: "2021-05-28 22:22:22" },
+]);
+const timeLine = ref([
+  { id: 0, type: "success", title: "成功", content: "全部成功", time: "2021-11-07 22:45:32" },
+  { id: 0, type: "error", title: "失败", content: "全部失败", time: "2021-11-07 22:45:32" },
+  { id: 0, type: "warning", title: "警告", content: "全部警告", time: "2021-11-07 22:45:32" },
+  { id: 0, type: "info", title: "信息", content: "加载成功", time: "2021-11-07 22:45:32" },
 ]);
 </script>
