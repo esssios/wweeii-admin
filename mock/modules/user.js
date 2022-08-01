@@ -4,21 +4,21 @@ const users = {
   admin: {
     id: 1,
     name: "admin",
-    avatar: "https://assets.qszone.com/images/avatar.jpg",
+    avatar: "public/avatar.svg",
     email: "Ronnie@123.com",
     role: ["admin"],
   },
   editor: {
     id: 2,
     name: "editor",
-    avatar: "https://assets.qszone.com/images/avatar.jpg",
+    avatar: "public/avatar.svg",
     email: "Ronnie@123.com",
     role: ["editor"],
   },
   guest: {
     id: 3,
     name: "guest",
-    avatar: "https://assets.qszone.com/images/avatar.jpg",
+    avatar: "public/avatar.svg",
     role: [],
   },
 };

@@ -15,7 +15,7 @@
         <Header />
       </n-layout-header>
       <n-layout style="background-color: #f5f6fb">
-        <Tags />
+        <Tags v-if="useTheme.tags.visible" />
         <Content />
       </n-layout>
     </n-layout>
@@ -28,8 +28,10 @@ import SideBar from "./components/sidebar/index.vue";
 import Content from "./components/content/index.vue";
 import Tags from "./components/tags/index.vue";
 import { useAppStore } from "@/store/modules/app";
+import { useThemeStore } from "@/store/modules/theme";
 
 const appStore = useAppStore();
+const useTheme = useThemeStore();
 </script>
 
 <style lang="scss" scoped></style>

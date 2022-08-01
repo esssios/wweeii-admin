@@ -10,7 +10,9 @@
     "lint:fix": "eslint --fix --ext .js,.vue ."
   },
   "dependencies": {
+    "@vueuse/core": "^9.0.2",
     "axios": "^0.27.2",
+    "dayjs": "^1.11.4",
     "pinia": "^2.0.14",
     "vue": "^3.2.25",
     "vue-router": "4.0.16"
