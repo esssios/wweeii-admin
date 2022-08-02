@@ -27,24 +27,19 @@ const options = [
 ];
 
 function handleSelect(key) {
+  console.log(this);
   if (key === "logout") {
-    $dialog.confirm({
+    $dialog.info({
       title: "提示",
-      type: "info",
       content: "确认退出？",
-      confirm() {
+      positiveText: "确定",
+      negativeText: "不确定",
+      onPositiveClick: () => {
         userStore.logout();
         $message.success("已退出登录");
       },
-    });
-  } else if (key === "switchRoles") {
-    $dialog.confirm({
-      title: "提示",
-      type: "info",
-      content: "确认切换？",
-      confirm() {
-        // userStore.logout()
-        $message.success("切换成功");
+      onNegativeClick: () => {
+        message.error("不确定");
       },
     });
   }

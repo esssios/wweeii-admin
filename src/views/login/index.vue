@@ -67,6 +67,7 @@ function initLoginInfo() {
 }
 
 const isRemember = ref(false);
+const loging = ref(false);
 async function handleLogin() {
   const { name, password } = loginInfo.value;
   if (!name || !password) {
@@ -76,6 +77,7 @@ async function handleLogin() {
   try {
     const res = await login({ name, password: password.toString() });
     if (res.code === 0) {
+      loging.value = true;
       $message.success("登录成功");
       setToken(res.data.token);
       if (isRemember.value) {
@@ -85,9 +87,11 @@ async function handleLogin() {
       }
       router.push("/");
     } else {
+      loging.value = false;
       $message.warning(res.message);
     }
   } catch (error) {
+    loging.value = false;
     $message.error(error.message);
   }
 }

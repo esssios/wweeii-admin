@@ -5,7 +5,7 @@
     :indent="22"
     :collapsed-icon-size="22"
     :collapsed="appStore.collapsed"
-    :c-width="64"
+    :collapsed-width="64"
     :options="menuOptions"
     :value="(currentRoute.meta && currentRoute.meta.activeMenu) || currentRoute.name"
     @update:value="handleMenuSelect"
@@ -98,7 +98,6 @@ function handleMenuSelect(key, item) {
 <style lang="scss">
 .side-menu:not(.n-menu--collapsed) {
   .n-menu-item-content {
-    margin-left: 18px !important;
     &::before {
       left: 5px;
       right: 5px;

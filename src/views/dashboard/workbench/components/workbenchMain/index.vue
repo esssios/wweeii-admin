@@ -74,7 +74,7 @@ const technology = ref([
     description: "所有现代的 HTML 页面都可以使用 JavaScript。",
     author: "网景 - Netscape",
     site: "https://www.typescriptlang.org/",
-    icon: "vscode-icons:file-type-typescript-official",
+    icon: "logos:javascript",
   },
   {
     id: 2,

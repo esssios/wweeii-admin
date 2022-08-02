@@ -11,7 +11,7 @@
       <SideBar />
     </n-layout-sider>
     <n-layout>
-      <n-layout-header h-60>
+      <n-layout-header>
         <Header />
       </n-layout-header>
       <n-layout style="background-color: #f5f6fb">

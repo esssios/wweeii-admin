@@ -1,5 +1,5 @@
 <template>
-  <header px-16 h-full flex items-center>
+  <header class="global-header px-16 h-60 flex items-center">
     <div flex items-center>
       <MenuCollapse />
       <BreadCrumb ml-15 />
@@ -19,3 +19,9 @@ import FullScreen from "./components/FullScreen.vue";
 import UserAvatar from "./components/UserAvatar.vue";
 import GithubSite from "./components/GithubSite.vue";
 </script>
+
+<style scoped>
+.global-header {
+  border-bottom: 2px solid rgb(246, 248, 247);
+}
+</style>

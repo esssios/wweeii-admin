@@ -32,7 +32,6 @@ const route = useRoute();
 const router = useRouter();
 const tagsStore = useTagsStore();
 const useTheme = useThemeStore();
-console.log(useTheme.tags.height);
 
 const contextMenuOption = reactive({
   show: false,
