@@ -2,7 +2,7 @@
   <n-menu
     class="side-menu"
     accordion
-    :indent="22"
+    :indent="18"
     :collapsed-icon-size="22"
     :collapsed="appStore.collapsed"
     :collapsed-width="64"

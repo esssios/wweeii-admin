@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-
+export * from "./router";
 /**
  * @desc  格式化时间
  * @param {(Object|string|number)} time

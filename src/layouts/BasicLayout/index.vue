@@ -23,10 +23,10 @@
 </template>
 
 <script setup>
-import Header from "./components/header/index.vue";
-import SideBar from "./components/sidebar/index.vue";
-import Content from "./components/content/index.vue";
-import Tags from "./components/tags/index.vue";
+import Header from "../components/header/index.vue";
+import SideBar from "../components/sidebar/index.vue";
+import Content from "../components/content/index.vue";
+import Tags from "../components/tags/index.vue";
 import { useAppStore } from "@/store/modules/app";
 import { useThemeStore } from "@/store/modules/theme";
 
