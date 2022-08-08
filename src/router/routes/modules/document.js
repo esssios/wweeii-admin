@@ -1,9 +1,11 @@
 import BasicLayout from "@/layouts/BasicLayout/index.vue";
+import {
+  views
+} from "@/views";
 const document = {
-  name: "Document",
-  path: "/document",
+  name: "document",
+  path: "/",
   component: BasicLayout,
-  redirect: "/document/vue_document",
   meta: {
     title: "文档",
     icon: "carbon:document",
@@ -11,18 +13,18 @@ const document = {
   },
   children: [
     {
-      name: "vue_document",
-      path: "vue_document",
-      component: () => import("@/views/document/vue_document/index.vue"),
+      name: "document_vue",
+      path: "/document/vue",
+      component: views.document_vue,
       meta: {
         title: "vue文档",
         icon: "ion:logo-vue",
       },
     },
     {
-      name: "react_document",
-      path: "react_document",
-      component: () => import("@/views/document/react_document/index.vue"),
+      name: "document_react",
+      path: "/document/react",
+      component: views.document_react,
       meta: {
         title: "react文档",
         icon: "ion:logo-react",

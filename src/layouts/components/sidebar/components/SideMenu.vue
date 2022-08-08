@@ -89,6 +89,7 @@ function handleMenuSelect(key, item) {
     if (item.path === currentRoute.value.path && !currentRoute.value.meta?.keepAlive) {
       appStore.reloadPage();
     } else {
+      console.log("item.path",item.path);
       router.push(item.path);
     }
   }

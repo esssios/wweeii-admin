@@ -8,7 +8,7 @@ export const basicRoutes = [
   {
     name: "404",
     path: "/404",
-    component: () => import("@/views/error_page/404.vue"),
+    component: () => import("@/views/error-page/404.vue"),
     isHidden: true,
   },
   {
@@ -36,9 +36,9 @@ export const basicRoutes = [
 
   {
     name: "ErrorPage",
-    path: "/error_page",
+    path: "/error-page",
     component: BasicLayout,
-    redirect: "/error_page/404",
+    redirect: "/error-page/404",
     meta: {
       title: "异常",
       icon: "carbon:error",
@@ -48,43 +48,14 @@ export const basicRoutes = [
       {
         name: "ERROR_404",
         path: "404",
-        component: () => import("@/views/error_page/404.vue"),
+        component: () => import("@/views/error-page/404.vue"),
         meta: {
           title: "404",
           icon: "tabler:error-404",
         },
       },
     ],
-  },
-
-  {
-    name: "Test",
-    path: "/test",
-    component: BasicLayout,
-    redirect: "/test/unocss",
-    meta: {
-      title: "测试",
-      icon: "file-icons:test-js",
-    },
-    children: [
-      {
-        name: "Unocss",
-        path: "unocss",
-        component: () => import("@/views/test_page/unocss/index.vue"),
-        meta: {
-          title: "测试Unocss",
-        },
-      },
-      {
-        name: "Message",
-        path: "message",
-        component: () => import("@/views/test_page/message/index.vue"),
-        meta: {
-          title: "测试Message",
-        },
-      },
-    ],
-  },
+  }
 ];
 
 export const NOT_FOUND_ROUTE = {

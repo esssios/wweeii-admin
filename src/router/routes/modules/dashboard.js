@@ -1,9 +1,10 @@
 import BasicLayout from "@/layouts/BasicLayout/index.vue";
+import { views } from "@/views";
 const dashboard = {
-  name: "Dashboard",
+  name: "dashboard",
   path: "/",
   component: BasicLayout,
-  redirect: "/workbench",
+  redirect: "/dashboard/workbench",
   meta: {
     title: "仪表盘",
     icon: "icon-park-outline:dashboard",
@@ -12,8 +13,8 @@ const dashboard = {
   children: [
     {
       name: "dashboard_workbench",
-      path: "workbench",
-      component: () => import("@/views/dashboard/workbench/index.vue"),
+      path: "/dashboard/workbench",
+      component: views.dashboard_workbench,
       meta: {
         title: "工作台",
         icon: "icon-park-outline:workbench",
@@ -21,8 +22,8 @@ const dashboard = {
     },
     {
       name: "dashboard_analysis",
-      path: "analysis",
-      component: () => import("@/views/dashboard/analysis/index.vue"),
+      path: "/dashboard/analysis",
+      component: views.dashboard_analysis,
       meta: {
         title: "分析页",
         icon: "icon-park-outline:analysis",
