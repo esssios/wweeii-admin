@@ -1,5 +1,5 @@
 <template>
-  <div p-16>
+  <div p-16 class="{ 'p-16' : showPadding }">
     <router-view v-slot="{ Component, route }">
       <transition name="fade-slide" mode="out-in" appear>
         <keep-alive :include="keepAliveRouteNames">
@@ -14,6 +14,13 @@
 import { useAppStore } from "@/store/modules/app";
 import { useRouter } from "vue-router";
 import { computed } from "vue";
+
+defineProps({
+  showPadding: {
+    type: Boolean,
+    default: true,
+  },
+});
 
 const appStore = useAppStore();
 const router = useRouter();

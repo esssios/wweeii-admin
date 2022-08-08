@@ -23,7 +23,7 @@
 </template>
 
 <script setup name="Tags">
-import ContextMenu from "./ContextMenu.vue";
+import ContextMenu from "./components/ContextMenu.vue";
 import { useTagsStore } from "@/store/modules/tags";
 import { useThemeStore } from "@/store/modules/theme";
 import ScrollX from "@/components/ScrollX.vue";

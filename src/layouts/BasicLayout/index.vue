@@ -8,25 +8,25 @@
       :width="220"
       :native-scrollbar="false"
     >
-      <SideBar />
+      <global-side />
     </n-layout-sider>
     <n-layout>
       <n-layout-header>
-        <Header />
+        <global-header />
       </n-layout-header>
       <n-layout style="background-color: #f5f6fb">
-        <Tags v-if="useTheme.tags.visible" />
-        <Content />
+        <global-tag v-if="useTheme.tags.visible" />
+        <global-content />
       </n-layout>
     </n-layout>
   </n-layout>
 </template>
 
 <script setup>
-import Header from "../components/header/index.vue";
-import SideBar from "../components/sidebar/index.vue";
-import Content from "../components/content/index.vue";
-import Tags from "../components/tags/index.vue";
+import GlobalHeader from "../common/GlobalHeader/index.vue";
+import GlobalSide from "../common/GlobalSide/index.vue";
+import GlobalContent from "../common/GlobalContent/index.vue";
+import GlobalTab from "../common/GlobalTab/index.vue";
 import { useAppStore } from "@/store/modules/app";
 import { useThemeStore } from "@/store/modules/theme";
 
