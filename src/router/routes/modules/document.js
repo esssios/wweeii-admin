@@ -1,7 +1,5 @@
 import BasicLayout from "@/layouts/BasicLayout/index.vue";
-import {
-  views
-} from "@/views";
+import { views } from "@/views";
 const document = {
   name: "document",
   path: "/",

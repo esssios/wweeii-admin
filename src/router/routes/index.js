@@ -55,7 +55,7 @@ export const basicRoutes = [
         },
       },
     ],
-  }
+  },
 ];
 
 export const NOT_FOUND_ROUTE = {
