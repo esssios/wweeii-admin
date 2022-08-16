@@ -15,7 +15,7 @@
         <global-header />
       </n-layout-header>
       <n-layout style="background-color: #f5f6fb">
-        <global-tag v-if="useTheme.tags.visible" />
+        <global-tab v-if="useTheme.tags.visible" />
         <global-content />
       </n-layout>
     </n-layout>

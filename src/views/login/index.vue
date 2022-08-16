@@ -52,8 +52,8 @@ const title = import.meta.env.VITE_APP_TITLE;
 const router = useRouter();
 
 const loginInfo = ref({
-  name: "",
-  password: "",
+  name: "admin",
+  password: "123456",
 });
 
 initLoginInfo();
