@@ -9,6 +9,7 @@ specifiers:
   '@vitejs/plugin-vue': ^2.3.3
   '@vueuse/core': ^9.0.2
   axios: ^0.27.2
+  crypto-js: ^4.1.1
   dayjs: ^1.11.4
   eslint: ^8.19.0
   eslint-config-prettier: ^8.5.0
@@ -34,6 +35,7 @@ specifiers:
 dependencies:
   '@vueuse/core': 9.0.2_vue@3.2.37
   axios: 0.27.2
+  crypto-js: 4.1.1
   dayjs: 1.11.4
   pinia: 2.0.14_vue@3.2.37
   vue: 3.2.37
@@ -782,6 +784,10 @@ packages:
       shebang-command: 2.0.0
       which: 2.0.2
     dev: true
+
+  /crypto-js/4.1.1:
+    resolution: {integrity: sha512-o2JlM7ydqd3Qk9CA0L4NL6mTzU2sdx96a+oOfPu8Mkl/PK51vSyoi8/rQ8NknZtk44vq15lmhAj9CIAGwgeWKw==}
+    dev: false
 
   /css-render/0.15.10:
     resolution: {integrity: sha512-6j5acvm81sXTHJiF47FNNICtDpF74YoWk1xEK3qQvdqgW6vc+OXrPqflL6m8f5GE6XuFYrbACNEd17kraCSBAQ==}

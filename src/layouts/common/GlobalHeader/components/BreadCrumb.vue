@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-import { renderIcon } from "@/utils/icon";
+import { renderIcon } from "@/utils";
 
 const router = useRouter();
 const route = useRoute();

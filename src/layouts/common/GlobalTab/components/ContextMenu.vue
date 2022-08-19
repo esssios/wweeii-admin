@@ -12,7 +12,7 @@
 
 <script setup>
 import { useTagsStore } from "@/store/modules/tags";
-import { renderIcon } from "@/utils/icon";
+import { renderIcon } from "@/utils";
 import { useAppStore } from "@/store/modules/app";
 
 const props = defineProps({

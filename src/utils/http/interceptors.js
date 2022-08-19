@@ -1,6 +1,6 @@
-import { getToken } from "@/utils/token";
+import { getToken } from "@/utils";
 import { toLogin } from "@/utils/auth";
-import { isNullOrUndef } from "@/utils/is";
+import { isNullOrUndef } from "@/utils/common/is";
 import { isWithoutToken } from "./helpers";
 export function reqResolve(config) {
   // 防止缓存，给get请求加上时间戳

@@ -1,17 +1,19 @@
 <template>
   <n-dropdown :options="options" @select="handleSelect">
     <div flex items-center cursor-pointer>
-      <img :src="userStore.avatar" mr10 w-35 h-35 rounded-full />
-      <span>{{ userStore.name }}</span>
+      <img :src="auth.userInfo.userAvatar" mr10 w-35 h-35 rounded-full />
+      <span>{{ auth.userInfo.userName }}</span>
     </div>
   </n-dropdown>
 </template>
 
 <script setup>
-import { useUserStore } from "@/store/modules/user";
-import { renderIcon } from "@/utils/icon";
+import { useAuthStore } from "@/store";
+import { renderIcon } from "@/utils";
 
-const userStore = useUserStore();
+// const userStore = useUserStore();
+const auth = useAuthStore();
+
 
 const options = [
   {
@@ -27,7 +29,6 @@ const options = [
 ];
 
 function handleSelect(key) {
-  console.log(this);
   if (key === "logout") {
     $dialog.info({
       title: "提示",
@@ -35,7 +36,7 @@ function handleSelect(key) {
       positiveText: "确定",
       negativeText: "不确定",
       onPositiveClick: () => {
-        userStore.logout();
+        auth.resetAuthStore();
         $message.success("已退出登录");
       },
       onNegativeClick: () => {

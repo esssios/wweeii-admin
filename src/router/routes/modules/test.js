@@ -2,11 +2,12 @@ import BasicLayout from "@/layouts/BasicLayout/index.vue";
 import { views } from "@/views";
 const test = {
   name: "test",
-  path: "/",
+  path: "/test",
   component: BasicLayout,
   meta: {
     title: "测试",
     icon: "file-icons:test-js",
+    order: 3,
   },
   children: [
     {

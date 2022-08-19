@@ -1,23 +1,25 @@
 import { defineStore } from "pinia";
-import { activeTag, tags, WITHOUT_TAG_PATHS } from "./helpers";
+// import { activeTag, tags, WITHOUT_TAG_PATHS } from "./helpers";
 import { router } from "@/router";
-import { sStorage } from "@/utils/cache";
+import { getLocal, setLocal } from '@/utils';
+
+export const WITHOUT_TAG_PATHS = ["/404", "/login"];
 
 export const useTagsStore = defineStore("tag", {
   state() {
     return {
-      tags: tags || [],
-      activeTag: activeTag || "",
+      tags: getLocal("tags") || [],
+      activeTag: getLocal("active-tag") || "",
     };
   },
   actions: {
     setActiveTag(path) {
       this.activeTag = path;
-      sStorage.set("activeTag", path);
+      setLocal("active-tag", path)
     },
     setTags(tags) {
       this.tags = tags;
-      sStorage.set("tags", tags);
+      setLocal("tags", tags)
     },
     addTag(tag = {}) {
       this.setActiveTag(tag.path);

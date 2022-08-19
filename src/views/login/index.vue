@@ -41,8 +41,8 @@
 
 <script setup>
 import { login } from "@/api/auth";
-import { lStorage } from "@/utils/cache";
-import { setToken } from "@/utils/token";
+// import { lStorage } from "@/utils/cache";
+import { setToken, getUserInfo,setUserInfo,removeUserInfo } from "@/utils";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import bgImg from "@/assets/svg/cool-background.svg";
@@ -59,7 +59,8 @@ const loginInfo = ref({
 initLoginInfo();
 
 function initLoginInfo() {
-  const localLoginInfo = lStorage.get("loginInfo");
+  // const localLoginInfo = lStorage.get("loginInfo");
+  const localLoginInfo = getUserInfo();
   if (localLoginInfo) {
     loginInfo.value.name = localLoginInfo.name || "";
     loginInfo.value.password = localLoginInfo.password || "";
@@ -76,14 +77,17 @@ async function handleLogin() {
   }
   try {
     const res = await login({ name, password: password.toString() });
+    console.log(res);
     if (res.code === 0) {
       loging.value = true;
       $message.success("登录成功");
+      console.log("res.data.token",res.data.token);
       setToken(res.data.token);
       if (isRemember.value) {
-        lStorage.set("loginInfo", { name, password });
+        // lStorage.set("loginInfo", { name, password });
+        setUserInfo({ name, password })
       } else {
-        lStorage.remove("loginInfo");
+        removeUserInfo()
       }
       router.push("/");
     } else {

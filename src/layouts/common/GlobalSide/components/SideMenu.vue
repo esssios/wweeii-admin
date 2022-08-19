@@ -14,10 +14,9 @@
 
 <script setup>
 import { usePermissionStore } from "@/store/modules/permission";
-
-import { isExternal } from "@/utils/is";
+import { isExternal } from "@/utils";
 import { useAppStore } from "@/store/modules/app";
-import { renderIcon } from "@/utils/icon";
+import { renderIcon } from "@/utils";
 
 const router = useRouter();
 const { currentRoute } = router;
@@ -39,11 +38,11 @@ function resolvePath(basePath, path) {
   );
 }
 
-function getMenuItem(route, basePath = "") {
+function getMenuItem(route) {
   let menuItem = {
     label: (route.meta && route.meta.title) || route.name,
     key: route.name,
-    path: resolvePath(basePath, route.path),
+    path: route.path,
     icon: route.meta?.icon ? renderIcon(route.meta?.icon, { size: 16 }) : renderIcon("mdi:circle-outline", { size: 8 }),
     index: route.meta?.index || 0,
   };

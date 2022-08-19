@@ -2,9 +2,8 @@ import BasicLayout from "@/layouts/BasicLayout/index.vue";
 import { views } from "@/views";
 const dashboard = {
   name: "dashboard",
-  path: "/",
+  path: "/dashboard",
   component: BasicLayout,
-  redirect: "/dashboard/workbench",
   meta: {
     title: "仪表盘",
     icon: "icon-park-outline:dashboard",
@@ -17,6 +16,8 @@ const dashboard = {
       component: views.dashboard_workbench,
       meta: {
         title: "工作台",
+        requiresAuth: true,
+        permissions: ['super', 'admin'],
         icon: "icon-park-outline:workbench",
       },
     },
@@ -26,6 +27,7 @@ const dashboard = {
       component: views.dashboard_analysis,
       meta: {
         title: "分析页",
+        requiresAuth: true,
         icon: "icon-park-outline:analysis",
       },
     },

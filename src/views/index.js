@@ -16,7 +16,7 @@ function getViewComponent() {
     const routeKey = key
       .replace(PREFIX, "")
       .replace(SUFFIX, "")
-      .replace(new RegExp(PATH_SPLIT_MARK, "g"), ROUTE_KEY_SPLIT_MARK)
+      .replace(new RegExp(PATH_SPLIT_MARK, "g"), ROUTE_KEY_SPLIT_MARK);
     components[routeKey] = importViews[key];
   });
 

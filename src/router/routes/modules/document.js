@@ -2,7 +2,7 @@ import BasicLayout from "@/layouts/BasicLayout/index.vue";
 import { views } from "@/views";
 const document = {
   name: "document",
-  path: "/",
+  path: "/document",
   component: BasicLayout,
   meta: {
     title: "文档",
