@@ -17,7 +17,7 @@ const dashboard = {
       meta: {
         title: "工作台",
         requiresAuth: true,
-        permissions: ['super', 'admin'],
+        permissions: ["super", "admin"],
         icon: "icon-park-outline:workbench",
       },
     },

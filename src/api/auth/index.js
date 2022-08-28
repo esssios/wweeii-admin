@@ -1,10 +1,17 @@
 import { defAxios as request } from "@/utils/http";
 
-export const login = (data) => {
+export const fetchLogin = (data) => {
   return request({
     url: "/auth/login",
     method: "post",
     data,
+  });
+};
+
+export const fetchUserInfo = () => {
+  return request({
+    url: "/auth/getUserInfo",
+    method: "get",
   });
 };
 

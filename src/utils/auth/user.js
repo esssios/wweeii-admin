@@ -38,9 +38,10 @@ export function getUserInfo() {
   const emptyInfo = {
     userId: "",
     userName: "",
-    userRole: "",
+    password: "",
   };
   const userInfo = getLocal("__USER_INFO__") || emptyInfo;
+  console.log("userInfo", userInfo);
   return userInfo;
 }
 

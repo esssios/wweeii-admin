@@ -14,7 +14,6 @@ import { renderIcon } from "@/utils";
 // const userStore = useUserStore();
 const auth = useAuthStore();
 
-
 const options = [
   {
     label: "退出登录",

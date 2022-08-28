@@ -4,4 +4,4 @@ export function setupStore(app) {
   app.use(createPinia());
 }
 
-export * from "./modules/auth"
+export * from "./modules/auth";

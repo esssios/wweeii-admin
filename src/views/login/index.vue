@@ -5,7 +5,7 @@
         <h5 class="flex-center text-24 font-normal" color="#6a6a6a"><icon-custom-logo mr-30 text-50 />{{ title }}</h5>
         <div mt-30>
           <n-input
-            v-model:value="loginInfo.name"
+            v-model:value="loginInfo.userName"
             autofocus
             class="text-16 items-center h-50 pl-10"
             placeholder="admin"
@@ -40,9 +40,8 @@
 </template>
 
 <script setup>
-import { login } from "@/api/auth";
-// import { lStorage } from "@/utils/cache";
-import { setToken, getUserInfo,setUserInfo,removeUserInfo } from "@/utils";
+import { useAuthStore } from "@/store";
+import { setToken, getUserInfo, setUserInfo, removeUserInfo } from "@/utils";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import bgImg from "@/assets/svg/cool-background.svg";
@@ -51,52 +50,21 @@ const title = import.meta.env.VITE_APP_TITLE;
 
 const router = useRouter();
 
+const auth = useAuthStore();
+
 const loginInfo = ref({
-  name: "admin",
+  userName: "Admin",
   password: "123456",
 });
-
-initLoginInfo();
-
-function initLoginInfo() {
-  // const localLoginInfo = lStorage.get("loginInfo");
-  const localLoginInfo = getUserInfo();
-  if (localLoginInfo) {
-    loginInfo.value.name = localLoginInfo.name || "";
-    loginInfo.value.password = localLoginInfo.password || "";
-  }
-}
 
 const isRemember = ref(false);
 const loging = ref(false);
 async function handleLogin() {
-  const { name, password } = loginInfo.value;
-  if (!name || !password) {
+  const { userName, password } = loginInfo.value;
+  if (!userName || !password) {
     $message.warning("请输入用户名和密码");
     return;
   }
-  try {
-    const res = await login({ name, password: password.toString() });
-    console.log(res);
-    if (res.code === 0) {
-      loging.value = true;
-      $message.success("登录成功");
-      console.log("res.data.token",res.data.token);
-      setToken(res.data.token);
-      if (isRemember.value) {
-        // lStorage.set("loginInfo", { name, password });
-        setUserInfo({ name, password })
-      } else {
-        removeUserInfo()
-      }
-      router.push("/");
-    } else {
-      loging.value = false;
-      $message.warning(res.message);
-    }
-  } catch (error) {
-    loging.value = false;
-    $message.error(error.message);
-  }
+  await auth.login({ userName, password: password.toString() });
 }
 </script>

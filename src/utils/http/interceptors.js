@@ -16,6 +16,8 @@ export function reqResolve(config) {
     return config;
   }
 
+  console.log(config, "config");
+
   const token = getToken();
   if (!token) {
     /**

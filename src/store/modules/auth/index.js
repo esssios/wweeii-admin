@@ -1,11 +1,10 @@
 import { unref } from "vue";
 import { defineStore } from "pinia";
 import { router } from "@/router";
-// import { fetchLogin, fetchUserInfo } from "@/service";
+import { fetchLogin, fetchUserInfo } from "@/api";
 import { useRouterPush } from "@/composables";
 import { clearAuthStorage, getToken, getUserInfo, setRefreshToken, setToken, setUserInfo } from "@/utils";
 // import { useTagsStore } from "../tags";
-// import { useRouteStore } from "../route";
 
 export const useAuthStore = defineStore("auth-store", {
   state: () => ({
@@ -27,14 +26,12 @@ export const useAuthStore = defineStore("auth-store", {
     resetAuthStore() {
       const { toLogin } = useRouterPush(false);
       // const { resetTabStore } = useTabStore();
-      // const { resetRouteStore } = useRouteStore();
       const route = unref(router.currentRoute);
 
       clearAuthStorage();
       this.$reset();
 
       // resetTabStore();
-      // resetRouteStore();
 
       if (route.meta.requiresAuth) {
         toLogin();
@@ -101,6 +98,7 @@ export const useAuthStore = defineStore("auth-store", {
     async login(userName, password) {
       this.loginLoading = true;
       const { data } = await fetchLogin(userName, password);
+      console.log("data", data);
       if (data) {
         await this.handleActionAfterLogin(data);
       }
@@ -115,16 +113,19 @@ export const useAuthStore = defineStore("auth-store", {
 
       const accounts = {
         super: {
+          userId: 0,
           userName: "Super",
-          password: "super123",
+          password: "123456",
         },
         admin: {
+          userId: 1,
           userName: "Admin",
-          password: "admin123",
+          password: "123456",
         },
         user: {
-          userName: "User01",
-          password: "user01123",
+          userId: 2,
+          userName: "User",
+          password: "123456",
         },
       };
       const { userName, password } = accounts[userRole];
