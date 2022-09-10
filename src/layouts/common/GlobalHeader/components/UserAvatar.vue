@@ -1,7 +1,7 @@
 <template>
   <n-dropdown :options="options" @select="handleSelect">
     <div flex items-center cursor-pointer>
-      <img :src="auth.userInfo.userAvatar" mr10 w-35 h-35 rounded-full />
+      <icon-custom-avatar class="text-32px" />
       <span>{{ auth.userInfo.userName }}</span>
     </div>
   </n-dropdown>
@@ -11,7 +11,6 @@
 import { useAuthStore } from "@/store";
 import { renderIcon } from "@/utils";
 
-// const userStore = useUserStore();
 const auth = useAuthStore();
 
 const options = [

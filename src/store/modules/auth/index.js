@@ -4,7 +4,7 @@ import { router } from "@/router";
 import { fetchLogin, fetchUserInfo } from "@/api";
 import { useRouterPush } from "@/composables";
 import { clearAuthStorage, getToken, getUserInfo, setRefreshToken, setToken, setUserInfo } from "@/utils";
-// import { useTagsStore } from "../tags";
+import { useTagsStore } from "../tag";
 
 export const useAuthStore = defineStore("auth-store", {
   state: () => ({
@@ -25,13 +25,13 @@ export const useAuthStore = defineStore("auth-store", {
     /** 重置auth状态 */
     resetAuthStore() {
       const { toLogin } = useRouterPush(false);
-      // const { resetTabStore } = useTabStore();
+      const { removeTag } = useTagsStore();
       const route = unref(router.currentRoute);
 
       clearAuthStorage();
       this.$reset();
 
-      // resetTabStore();
+      removeTag();
 
       if (route.meta.requiresAuth) {
         toLogin();

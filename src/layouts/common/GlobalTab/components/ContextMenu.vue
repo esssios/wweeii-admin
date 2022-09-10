@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import { useTagsStore } from "@/store/modules/tags";
+import { useTagsStore } from "@/store";
 import { renderIcon } from "@/utils";
 import { useAppStore } from "@/store/modules/app";
 

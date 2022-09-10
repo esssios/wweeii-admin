@@ -1,11 +1,10 @@
 import { defineStore } from "pinia";
-// import { activeTag, tags, WITHOUT_TAG_PATHS } from "./helpers";
 import { router } from "@/router";
 import { getLocal, setLocal } from "@/utils";
 
 export const WITHOUT_TAG_PATHS = ["/404", "/login"];
 
-export const useTagsStore = defineStore("tag", {
+export const useTagsStore = defineStore("tag-store", {
   state() {
     return {
       tags: getLocal("tags") || [],

@@ -5,3 +5,4 @@ export function setupStore(app) {
 }
 
 export * from "./modules/auth";
+export * from "./modules/tag";
