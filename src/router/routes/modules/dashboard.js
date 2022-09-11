@@ -7,7 +7,7 @@ const dashboard = {
   meta: {
     title: "仪表盘",
     icon: "icon-park-outline:dashboard",
-    order: 1,
+    order: 2,
   },
   children: [
     {

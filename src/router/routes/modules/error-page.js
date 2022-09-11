@@ -20,6 +20,15 @@ const errorPage = {
         icon: "tabler:error-404",
       },
     },
+    {
+      name: "505",
+      path: "404",
+      component: () => import("@/views/error-page/404.vue"),
+      meta: {
+        title: "505",
+        icon: "tabler:error-404",
+      },
+    },
   ],
 };
 

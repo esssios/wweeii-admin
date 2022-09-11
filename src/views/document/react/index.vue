@@ -1,3 +1,11 @@
 <template>
-  <h1>react文档</h1>
+  <div class="h-80vh">
+    <iframe class="wh-full" frameborder="0" :src="src"></iframe>
+  </div>
 </template>
+
+<script setup>
+const src = "https://react.docschina.org/";
+</script>
+
+<style scoped></style>

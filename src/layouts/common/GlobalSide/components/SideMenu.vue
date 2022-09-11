@@ -24,7 +24,7 @@ const permissionStore = usePermissionStore();
 const appStore = useAppStore();
 
 const menuOptions = computed(() => {
-  return permissionStore.menus.map((item) => getMenuItem(item)).sort((a, b) => a.index - b.index);
+  return permissionStore.menus.map((item) => getMenuItem(item)).sort((a, b) => a.order - b.order);
 });
 
 function resolvePath(basePath, path) {

@@ -7,7 +7,7 @@ const document = {
   meta: {
     title: "文档",
     icon: "carbon:document",
-    order: 2,
+    order: 1,
   },
   children: [
     {

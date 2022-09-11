@@ -13,11 +13,11 @@
     <n-layout>
       <n-layout-header>
         <global-header />
-      </n-layout-header>
-      <n-layout style="background-color: #f5f6fb">
         <global-tab v-if="useTheme.tags.visible" />
+      </n-layout-header>
+      <n-layout-content style="background-color: #f5f6fb">
         <global-content />
-      </n-layout>
+      </n-layout-content>
     </n-layout>
   </n-layout>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div p-16 class="{ 'p-16' : showPadding }">
+  <div p-16 :class="{ 'p-16': showPadding }">
     <router-view v-slot="{ Component, route }">
       <transition name="fade-slide" mode="out-in" appear>
         <keep-alive :include="keepAliveRouteNames">
