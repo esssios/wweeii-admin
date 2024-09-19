@@ -2,30 +2,30 @@ import BasicLayout from "@/layouts/BasicLayout/index.vue";
 import { views } from "@/views";
 
 const errorPage = {
-  name: "error-page",
-  path: "/error-page",
+  name: "errorpage",
+  path: "/errorpage",
   component: BasicLayout,
   meta: {
     title: "异常",
     icon: "carbon:error",
-    order: 4,
+    order: 5,
   },
   children: [
     {
-      name: "404",
-      path: "404",
-      component: () => import("@/views/error-page/404.vue"),
+      name: "403",
+      path: "/403",
+      component: views["errorpage_403"],
       meta: {
-        title: "404",
-        icon: "tabler:error-404",
+        title: "403",
+        icon: "tabler:error-403",
       },
     },
     {
-      name: "505",
-      path: "404",
-      component: () => import("@/views/error-page/404.vue"),
+      name: "404",
+      path: "/404",
+      component: views.errorpage_404,
       meta: {
-        title: "505",
+        title: "404",
         icon: "tabler:error-404",
       },
     },

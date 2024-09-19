@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 import { router } from "@/router";
 import { getLocal, setLocal } from "@/utils";
 
-export const WITHOUT_TAG_PATHS = ["/404", "/login"];
+export const WITHOUT_TAG_PATHS = ["/login"];
 
 export const useTagsStore = defineStore("tag-store", {
   state() {

@@ -89,6 +89,7 @@ function handleMenuSelect(key, item) {
       appStore.reloadPage();
     } else {
       router.push(item.path);
+      console.log(router);
     }
   }
 }
